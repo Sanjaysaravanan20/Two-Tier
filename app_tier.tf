@@ -3,6 +3,7 @@ resource "aws_instance" "app" {
   ami           = "ami-084568db4383264d4"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.private_app.id
+  associate_public_ip_address = true
   key_name      = var.key_name
   security_groups = [aws_security_group.app_sg.id]
 
